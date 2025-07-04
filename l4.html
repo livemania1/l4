@@ -96,9 +96,9 @@
     <!-- App Container -->
     <div id="app" class="h-full w-full relative">
         <!-- Onboarding Screens (Default) -->
-        <div id="onboarding" class="h-full w-full flex overflow-hidden">
+        <div id="onboarding" class="h-full w-full flex overflow-hidden relative">
             <!-- Slide 1 -->
-            <div id="slide1" class="slide min-w-full h-full flex flex-col items-center justify-center px-8" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fc92327e-9fed-4aea-8784-ca3100bcfa9b.png')">
+            <div id="slide1" class="slide min-w-full h-full flex flex-col items-center justify-center px-8 absolute top-0 left-0" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fc92327e-9fed-4aea-8784-ca3100bcfa9b.png')">
                 <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/00141c30-d3c5-4ee0-b4d5-66a56afd77ef.png" alt="Football Star logo with neon green text and football motif" class="w-32 h-32 mb-8 rounded-full glow-box">
                 <h1 class="text-4xl font-bold mb-4 text-center sport-font glow-text">FOOTBALL STAR</h1>
                 <p class="text-xl text-center mb-8">Your Ultimate Fan Companion</p>
@@ -111,7 +111,7 @@
             </div>
             
             <!-- Slide 2 -->
-            <div id="slide2" class="slide min-w-full h-full flex flex-col items-center justify-center px-8" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/45db4825-da20-4b09-89ec-ee223017d2e4.png')">
+            <div id="slide2" class="slide min-w-full h-full flex flex-col items-center justify-center px-8 absolute top-0 left-0 transform translate-x-full" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/45db4825-da20-4b09-89ec-ee223017d2e4.png')">
                 <div class="relative w-full max-w-xs h-64 mb-8">
                     <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2d40885b-3790-4aca-888f-ae3a483a4462.png" alt="Prediction interface with live match data" class="absolute top-0 left-0 w-40 h-28 rounded-lg glow-hover">
                     <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8a6785ba-3e44-43c8-8aea-63c158ff1178.png" alt="Fan chat interface with message bubbles" class="absolute top-0 right-0 w-40 h-28 rounded-lg glow-hover">
@@ -127,7 +127,7 @@
             </div>
             
             <!-- Slide 3 -->
-            <div id="slide3" class="slide min-w-full h-full flex flex-col items-center justify-center px-8" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/85f93de5-ff66-40ce-b9a2-a6b37da0c22e.png')">
+            <div id="slide3" class="slide min-w-full h-full flex flex-col items-center justify-center px-8 absolute top-0 left-0 transform translate-x-full" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/85f93de5-ff66-40ce-b9a2-a6b37da0c22e.png')">
                 <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5f5694c3-fd1c-4f7e-8ff7-0db8743a622d.png" alt="Animated football player scoring a goal with motion lines" class="w-64 h-64 mb-8 pulse">
                 <h1 class="text-3xl font-bold mb-4 text-center sport-font">READY TO SCORE BIG?</h1>
                 <p class="text-xl text-center mb-8">Let's Kick Off</p>
@@ -141,7 +141,7 @@
         </div>
         
         <!-- Login/Sign Up Screen -->
-        <div id="login" class="hidden h-full w-full flex flex-col items-center justify-center px-8" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://placehold.co/800x1600?text=Stadium+Lights')">
+        <div id="login" class="hidden h-full w-full flex flex-col items-center justify-center px-8" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4db34302-0489-4e53-8e60-c718a25fbac1.png')">
             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c46b7676-2e83-4931-8eec-b99d1c7f459e.png" alt="Football Star logo glowing on dark background" class="w-32 h-32 mb-8 rounded-full glow-box">
             <h1 class="text-3xl font-bold mb-8 text-center sport-font">FOOTBALL STAR</h1>
             
@@ -1076,8 +1076,8 @@
                 const currentSlideElement = document.getElementById(`slide${currentSlide}`);
                 const nextSlideElement = document.getElementById(`slide${currentSlide + 1}`);
                 
-                currentSlideElement.style.transform = `translateX(-${currentSlide * 100}%)`;
-                nextSlideElement.style.transform = `translateX(-${(currentSlide - 1) * 100}%)`;
+                currentSlideElement.style.transform = `translateX(-100%)`;
+                nextSlideElement.style.transform = `translateX(0)`;
                 
                 currentSlide++;
             }
@@ -1117,3 +1117,4 @@
     </script>
 </body>
 </html>
+
