@@ -151,7 +151,7 @@
                 <button onclick="showScreen('home')" class="btn-primary w-full py-3 rounded-lg font-bold mb-4">LOGIN</button>
                 <div class="text-center mb-4">OR</div>
                 <button class="btn-outline w-full py-3 rounded-lg font-bold flex items-center justify-center">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a47ec017-d02f-4f3a-b9b6-f8622a4ff513.png" alt="Google logo icon" class="mr-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a47ec017-d02f-4f3a-b9b6-f8622a4ff513.png" alt="Google logo icon" class="mr-2 w-5 h-5">
                     CONTINUE WITH GOOGLE
                 </button>
             </div>
@@ -161,7 +161,7 @@
         </div>
         
         <!-- Home Screen -->
-        <div id="home" class="hidden h-full w-full flex flex-col pb-16">
+        <div id="home" class="hidden w-full flex flex-col pb-16 overflow-y-auto" style="height: calc(100vh - 4rem)">
             <!-- Header -->
             <div class="px-4 py-6">
                 <div class="flex justify-between items-center mb-6">
@@ -460,8 +460,21 @@
                     </div>
                 </div>
                 
-                <div id="chatContent" class="hidden">
-                    <!-- Chat content would go here -->
+                <div id="chatContent" class="hidden p-4 bg-gray-800 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full mr-3"></div>
+                        <div>
+                            <div class="font-bold">Fan Chat</div>
+                            <div class="text-xs text-gray-400">Live discussion about the match</div>
+                        </div>
+                    </div>
+                    <div class="h-48 overflow-y-auto mb-4 space-y-3">
+                        <!-- Sample chat messages would go here -->
+                    </div>
+                    <div class="flex">
+                        <input type="text" placeholder="Type a message..." class="flex-grow px-3 py-2 bg-gray-700 rounded-l-lg">
+                        <button class="bg-green-500 px-3 py-2 rounded-r-lg">Send</button>
+                    </div>
                 </div>
                 
                 <div id="h2hContent" class="hidden">
@@ -524,7 +537,7 @@
                             <div class="bg-gray-700 p-3 rounded-lg">
                                 <div class="text-xs mb-1">Barça vs Madrid</div>
                                 <div class="font-bold text-sm mb-1">Winner?</div>
-                                <button class="btn-outline w-full py-1 text-xs rounded">Predict</button>
+                                <button onclick="handlePrediction(this)" class="btn-outline w-full py-1 text-xs rounded cursor-pointer hover:bg-gray-600 transition">Predict</button>
                             </div>
                             <div class="bg-gray-700 p-3 rounded-lg">
                                 <div class="text-xs mb-1">Man City vs Chelsea</div>
@@ -1084,6 +1097,12 @@
         }
         
         // Set active match tab
+        function handlePrediction(button) {
+            button.textContent = 'Predicted!';
+            button.classList.remove('btn-outline');
+            button.classList.add('bg-green-500', 'text-black');
+        }
+
         function setMatchTab(tabName) {
             // Hide all tab contents
             document.getElementById('scorecardContent').classList.add('hidden');
@@ -1113,7 +1132,27 @@
         document.addEventListener('DOMContentLoaded', function() {
             showScreen('onboarding');
             setMatchTab('scorecard');
+            
+            // Auto-update match stats
+            if (currentScreen === 'matches') {
+                setInterval(updateMatchStats, 5000);
+            }
         });
+
+        function updateMatchStats() {
+            // Random updates for demo
+            const possessionElem = document.querySelector('#scorecardContent [data-stat="possession"]');
+            const shotsElem = document.querySelector('#scorecardContent [data-stat="shots"]');
+            const onTargetElem = document.querySelector('#scorecardContent [data-stat="onTarget"]');
+            
+            if (possessionElem) {
+                const newPos = Math.min(100, parseInt(possessionElem.textContent.split('%')[0]) + (Math.random() > 0.5 ? 1 : -1));
+                possessionElem.textContent = `${newPos}% - ${100-newPos}%`;
+                document.querySelector('#scorecardContent [data-stat="possession-bar"]').style.width = `${newPos}%`;
+            }
+            
+            // Similar updates for shots and on target
+        }
     </script>
 </body>
 </html>
