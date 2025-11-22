@@ -132,90 +132,186 @@
 
         </div>
 
-        Join @for match
+        Join @sport match
 
     </div>
 
-    
-
-<!DOCTYPE html>
-<script language="javascript">
-
-// alert('Join Our Telegram For Latest update')
-         if (confirm("Join Our Telegram Channel @sport live For Latest Update") == true) {
-         window.open("https://t.me/sports_live_linkss", '_blank');
-     }
-</script>'));</script>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/shaka-player.ui.min.js" crossorigin="anonymous"></script>
-    <style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection">
-    <div id="player-container">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/controls.min.css"crossorigin="anonymous">
-    <script defer src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
-      <body bgcolor="black" style="margin:0">
-
-    <center>
-            <div data-shaka-player-container="" style="width: 100%; height: 100%" class="shaka-mobile shaka-video-container" shaka-controls="true">
-            <video poster="" autoplay="" data-shaka-player="" id="video" style="width:100%;height:100%;" class="shaka-video" src="blob:https://tnt1-criccoder.vercel.app/f4ee7a76-3283-4a88-99db-a839c2081e21"></video>
-        <canvas class="shaka-canvas-container"></canvas><div class="shaka-controls-container" shown="true"><div class="shaka-scrim-container"></div><div class="shaka-hidden-fast-forward-container"><div class="shaka-fast-foward-container"><span>0s</span><span class="shaka-forward-rewind-container-icon">fast_forward</span></div></div><div class="shaka-hidden-rewind-container"><div class="shaka-rewind-container"><span>0s</span><span class="shaka-forward-rewind-container-icon">fast_rewind</span></div></div><div class="shaka-server-side-ad-container"></div><div class="shaka-bottom-controls shaka-no-propagation"><div class="shaka-ad-controls shaka-hidden"><div class="shaka-ad-position shaka-hidden"><span class="shaka-ad-position-span"></span></div><div class="shaka-ad-counter"><span class="shaka-ad-counter-span"></span></div></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-resolutions"><button type="button" class="shaka-back-to-overflow-button" aria-label="Resolution"><i class="material-icons-round">arrow_back</i><span>Resolution</span></button><button type="button" class="explicit-resolution"><span>1080p</span></button><button type="button" class="explicit-resolution"><span>720p</span></button><button type="button" class="explicit-resolution"><span>576p</span></button><button type="button" class="explicit-resolution"><span>432p</span></button><button type="button" class="explicit-resolution"><span>288p</span></button><button type="button" class="explicit-resolution"><span>144p</span></button><button type="button" class="shaka-enable-abr-button" aria-selected="true"><span class="shaka-auto-span shaka-chosen-item">Auto</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-audio-languages"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Language</span></button><button type="button" aria-selected="true"><span class="shaka-chosen-item">English</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-playback-rates"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Playback speed</span></button><button type="button"><span>0.5x</span></button><button type="button"><span>0.75x</span></button><button type="button"><span>1x</span></button><button type="button"><span>1.25x</span></button><button type="button"><span>1.5x</span></button><button type="button"><span>1.75x</span></button><button type="button"><span>2x</span></button></div></div><div class="shaka-client-side-ad-container shaka-hidden"></div><div class="shaka-spinner-container shaka-hidden"><div class="shaka-spinner"><svg class="shaka-spinner-svg" viewBox="0 0 30 30"><circle class="shaka-spinner-path" cx="15" cy="15" r="14.5" fill="none" stroke-width="1" stroke-miterlimit="10"></circle></svg></div></div><div class="shaka-text-container" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;"></div></div>
-    </center>
-      
-
-    <script>
-          const manifestUri ="https://mini.allinonereborn.fun/jiotv-in/app/ts_live_1984.m3u8";
-        async function init() {
-          const video = document.getElementById('video');
-          const ui = video['ui'];
-          const controls = ui.getControls();
-          const player = controls.getPlayer();
-          const config = {
-               'controlPanelElements': ['play_pause','mute','spacer','time_and_duration','quality','fullscreen','picture_in_picture']
-          }
-          ui.configure(config);
-        
-          window.player = player;
-            window.ui = ui;
-          
-          player.addEventListener('error', onPlayerErrorEvent);
-          controls.addEventListener('error', onUIErrorEvent);
-        
-          try {
-            await player.load(manifestUri);
-            console.log('The video has now been loaded!');
-          } catch (error) {
-            onPlayerError(error);
-          }
-        }
-        
-        function onPlayerErrorEvent(errorEvent) {
-          onPlayerError(event.detail);
-        }
-        
-        function onPlayerError(error) {
-          console.error('Error code', error.code, 'object', error);
-        }
-        
-        function onUIErrorEvent(errorEvent) {
-          onPlayerError(event.detail);
-        }
-        
-        function initFailed(errorEvent) {
-          console.error('Unable to load the UI library!');
-        }
-        
-        document.addEventListener('shaka-ui-loaded', init);
-        document.addEventListener('shaka-ui-load-failed', initFailed);
-        </script>
-  </body>
-</html>
  
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.css"/>
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
+<style>
+html {
+font-family: sans-serif;
+background: #000;
+}
+.plyr {
+height: 100%;
+width :100%;
+}
+:root {
+--plyr-color-main: #d9230f;
+}
+.loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+    }
+    
+    .loading-text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+    }
+    
+    .loading-text span {
+        display: inline-block;
+        margin: 0 5px;
+        color: #00b3ff;
+        font-family: 'Quattrocento Sans', sans-serif;
+    }
+    
+    .loading-text span:nth-child(1) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0s infinite linear alternate;
+    }
+    
+    .loading-text span:nth-child(2) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.2s infinite linear alternate;
+    }
+    
+    .loading-text span:nth-child(3) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.4s infinite linear alternate;
+    }
+    
+    .loading-text span:nth-child(4) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.6s infinite linear alternate;
+    }
+    
+    .loading-text span:nth-child(5) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.8s infinite linear alternate;
+    }
+    
+    .loading-text span:nth-child(6) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1s infinite linear alternate;
+    }
+    
+    .loading-text span:nth-child(7) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1.2s infinite linear alternate;
+    }
+    .loading-text span:nth-child(8) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1.4s infinite linear alternate;
+    }
+    .loading-text span:nth-child(9) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1.6s infinite linear alternate;
+    }
+    .loading-text span:nth-child(10) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1.8s infinite linear alternate;
+    }
+    .loading-text span:nth-child(11) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 2s infinite linear alternate;
+    }
+    .loading-text span:nth-child(12) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 2.2s infinite linear alternate;
+    }
+    @keyframes blur-text {
+        0% {
+            filter: blur(0px);
+        }
+        100% {
+            filter: blur(4px);
+        }
+    }
 
-    <script>
+    .plyr__video-wrapper::before {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        content: '';
+        height: 35px;
+        width: 35px;
+        background-size: 35px auto, auto;
+    }
+
+</style>
+</head>
+</div>
+<div>
+<video autoplay controls crossorigin playsinline>
+<source type="application/vnd.apple.mpegurl" src="https://mini.allinonereborn.fun/jiotv-in/app/ts_live_1984.m3u8"></video>
+</video>
+</div>
+</body>
+<script>
+ setTimeout(videovisible, 3000)
+function videovisible() {
+    document.getElementById('loading').style.display = 'none'
+}
+document.addEventListener("DOMContentLoaded", () => {
+const e = document.querySelector("video"),
+n = e.getElementsByTagName("source")[0].src,
+o = {};
+if(Hls.isSupported()) {
+var config = {
+maxMaxBufferLength: 100,
+};
+const t = new Hls(config);
+t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
+const s = t.levels.map(e => e.height);
+o.quality = {
+default: s[0],
+options: s,
+forced: !0,
+onChange: e => (function(e) {
+window.hls.levels.forEach((n, o) => {
+n.height === e && (window.hls.currentLevel = o)
+})
+})(e)
+};
+new Plyr(e, o)
+}), t.attachMedia(e), window.hls = t
+} else {
+new Plyr(e, o)
+}
+});
+  </script>
+<script>  if(confirm("join telegram channel")) {
+    window.location.href = "https://t.me/sports_live_linkss"
+}
+</script>
+  </body>
+  </html>   
+<script>
 
         // Prevent the default action of the link
 
@@ -226,7 +322,6 @@
         });
 
     </script>
-
 <noscript>You must enable JavaScript to see this text.</noscript>
 
-</body></html>
+</body></html><blockquote></blockquote>
